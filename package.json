@@ -1,0 +1,22 @@
+{
+  "name": "browser",
+  "type": "module",
+  "scripts": {
+    "watch-fable": "dotnet fable watch src/Ictf.Client",
+    "watch-vite": "vite",
+    "api": "dotnet watch run --project src/Ictf.Api -lp https --no-hot-reload",
+    "dev": "concurrently --kill-others --names \"fable,vite,api\" -c \"bgBlue.black,bgMagenta.black,bgYellow.black\" \"bun watch-fable\" \"bun watch-vite\" \"bun api\""
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
+    "daisyui": "^4.12.23",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.7"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

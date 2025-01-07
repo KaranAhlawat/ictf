@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=ict
+      - POSTGRES_PASSWORD=ictpwd
+      - POSTGRES_DB=ictdb
+    restart: unless-stopped

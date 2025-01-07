@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PackageId>Ictf.Api</PackageId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.SystemTextJson" Version="1.3.13" />
+    <PackageReference Include="Giraffe" Version="6.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.0" />
+    <PackageReference Include="Npgsql" Version="9.0.2" />
+    <PackageReference Include="Npgsql.FSharp" Version="8.0.0" />
+    <PackageReference Include="NpgsqlFSharpAnalyzer" Version="3.26.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="web.config" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="WebRoot\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WebRoot/" />
+    <Compile Include="Domain/Types.fs" />
+    <Compile Include="Domain/Provider.fs" />
+    <Compile Include="Repos/DbConnFactory.fs" />
+    <Compile Include="Repos/SqlExtensions.fs" />
+    <Compile Include="Repos/UserRepo.fs" />
+    <Compile Include="Http/Dto.fs" />
+    <Compile Include="Http/Handlers.fs" />
+    <Compile Include="Http/UserRoutes.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+</Project>

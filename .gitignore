@@ -1,0 +1,10 @@
+node_modules/
+.idea/
+bin/
+obj/
+fable_modules/
+*.csproj
+Ictf.sln.DotSettings.user
+NPGSQL_FSHARP
+appsettings.json
+src/Ictf.Client/*.fs.js
